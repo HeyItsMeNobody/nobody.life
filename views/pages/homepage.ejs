@@ -5,8 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico');
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-color: black;
+        }
+        .screenfiller {
+            background-color: black;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+        }
+        .middleText {
+            font-family: 'Pacifico', cursive;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+        }
+        .projectcontainer {
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            text-align: center;
+            color: white;
+        }
+        .card {
+            position: relative;
+            font-family: 'Pacifico', cursive;
+            color: white;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: black;
+            background-clip: border-box;
+            border: 1px solid white;
+            border-radius: .25rem;
+        }
+        .card-header {
+            font-size: 2.2rem;
+        }
+        .card-main-description {
+            font-size: 1.6rem;
+        }
+        .footer {
+            font-family: 'Pacifico', cursive;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 25px;
+        }
+    </style>
 </head>
 <body>
-    <p>Homepage</p>
+    <!-- Start screen -->
+    <div class="screenfiller">
+        <div class="middleText">Nobody.life</div>
+    </div>
+    <!-- Projects -->
+    <div class="projectcontainer">Projects<br/></div>
+    <div class="card">
+        <div class="card-header">nobody.life</div>
+        <div class="card-main">
+            <div class="card-main-description">The website you are on right now that i use to share most of my projects.<br/>
+            Links:<br/>
+            <a href="https://github.com/HeyItsMeNobody/nobody.life">Github</a></div>
+        </div>
+    </div>
+    <br/>
+    <!-- Footer -->
+    <div class="footer">nobody.life is a site owned by Nobody, Social medias: <a href="https://twitter.com/heyitsmenobodyy">Twitter</a></div>
 </body>
 </html>
