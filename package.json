@@ -4,12 +4,13 @@
   "description": "My site.",
   "main": "main.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/HeyItsMeNobody/nobody.life.git"
+    "type": "git",
+    "url": "https://github.com/HeyItsMeNobody/nobody.life.git"
   },
   "author": "heyitsmenobodyy",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4"
   }
 }
