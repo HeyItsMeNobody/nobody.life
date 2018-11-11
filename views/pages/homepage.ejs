@@ -79,7 +79,7 @@
     </div>
     <!-- Projects -->
     <div class="projectcontainer">Projects<br/></div>
-    <div class="card">
+    <!-- <div class="card">
         <div class="card-header">nobody.life</div>
         <div class="card-main">
             <div class="card-main-description">The website you are on right now that i use to share most of my projects.<br/>
@@ -97,7 +97,10 @@
         <a href="https://github.com/HeyItsMeNobody/Rem-Chrome">Github (Chrome extension)</a></div>
     </div>
     </div>
-    <br/>
+    <br/> -->
+    <script><% projects.forEach(element => { %>
+        document.write('<%- element.html %>');
+    <% }) %></script>
     <!-- Footer -->
     <div class="footer">nobody.life is a site owned by Nobody, Social medias: <a href="https://twitter.com/heyitsmenobodyy">Twitter</a></div>
 </body>
