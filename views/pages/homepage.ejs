@@ -70,9 +70,35 @@
             border: 1px solid white;
             border-radius: 25px;
         }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    <!-- NavBar -->
+    <ul>
+        <li><a href="/">Home</a></li>
+        <% if (user) {%>
+        <li><a href="/auth/logout">Logout</a></li>
+        <%} else {%>
+        <li><a href="/auth/discord">Login</a></li>
+        <%}%>
+    </ul>
     <!-- Start screen -->
     <div class="screenfiller">
         <div class="middleText">Nobody.life</div>
