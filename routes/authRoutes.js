@@ -10,8 +10,8 @@ router.get('/logout', function (req, res) {
 });
 
 router.get('/discord', passport.authenticate('discord', {
-    scope: ['identify']
-}));
+    scope: ['identify', 'guilds']
+}), (req,res) => {res.send('Redirecting to discord..')})
 
 router.get('/discord/redirect', passport.authenticate('discord'), function (req, res) {
     res.redirect('/');

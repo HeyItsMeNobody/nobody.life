@@ -10,8 +10,9 @@ router.get('/', function (req, res) {
     getConnection(function(err, conn) {
         conn.query('SELECT * FROM `projects_html`', function (error, results, fields) {
             if (error) throw error;
-            res.render('pages/homepage', { projects: results, user: req.user });
+            res.render('pages/homepage', {projects: results, user: req.user});
         });
+        conn.release();
     });
 });
 

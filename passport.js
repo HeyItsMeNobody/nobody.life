@@ -22,7 +22,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new DiscordStrategy({
     clientID: config.discord.clientID,
     clientSecret: config.discord.clientSecret,
-    callbackURL: config.discord.callbackURL
+    callbackURL: "/auth/discord/redirect"
 }, (accessToken, refreshToken, profile, done) => {
     getConnection(function(err, conn) {
         var sqlselect = `SELECT 1 FROM auth WHERE id = ${profile.id};`
@@ -48,7 +48,6 @@ passport.use(new DiscordStrategy({
                 });
             }
         });
-        console.log(profile);
         conn.release();
     });
     done(null, profile)

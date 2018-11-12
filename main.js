@@ -10,8 +10,8 @@ app.set('view engine', 'ejs');
 
 // Cookie session
 app.use(cookieSession({
-    maxAge: 24 * 60 * 60 * 1000,
-    keys: [config.cookieSession.cookieKeys]
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    keys: [config.cookieSession.cookieKey]
 }));
 // Init passport
 app.use(passport.initialize());
