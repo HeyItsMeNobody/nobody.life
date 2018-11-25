@@ -28,7 +28,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 50px;
             color: white;
         }
         .projectcontainer {
@@ -88,6 +87,24 @@
             text-decoration: none;
         }
     </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script>
+        $('#postForm').ajaxForm({
+            type: 'POST',
+            url: '/shortener/api/new',
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                if (response.failed == "yes") {
+                    document.getElementById("result").innerHTML = `Error! Cause: ${response.reason}`
+                } else {
+                    document.getElementById("result").innerHTML = `Here is the shortened url: <a href="${document.URL}/${response.id}">${document.URL}/${response.id}</a>`
+                }
+            } 
+        });
+    </script>
 </head>
 <body>
     <!-- NavBar -->
@@ -102,7 +119,13 @@
     </ul>
     <!-- Start screen -->
     <div class="screenfiller">
-        <div class="middleText">Nobody.life</div>
+        <div class="middleText">
+            <form id="postForm">
+                <input type="text" name="url" value="URL here">
+                <input type="submit" value="Shorten it!">
+            </form><br/>
+            <p id="result"></p>
+        </div>
     </div>
     <!-- Footer -->
     <div class="footer">nobody.life is a site owned by Nobody, Social medias: <a href="https://twitter.com/heyitsmenobodyy">Twitter</a></div>
