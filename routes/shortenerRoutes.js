@@ -4,6 +4,7 @@ var config = require('../config.json');
 var mysql =  require('mysql');
 var getConnection = require('../mysqlPool.js');
 var validUrl = require('valid-url');
+var shortid = require('shortid');
 
 //INSERT INTO projects_html (html) VALUES ('<div class="card"><div class="card-header">nobody.life</div><div class="card-main"><div class="card-main-description">The website you are on right now that i use to share most of my projects.<br/>Links:<br/><a href="https://github.com/HeyItsMeNobody/nobody.life">Github</a></div></div></div><br/>')
 
@@ -23,8 +24,8 @@ router.get('/:id', function (req, res) {
     });
 });
 router.post('/api/new', function(req, res) {
-    if (req.body.id && req.body.url) {
-        var id = req.body.id;
+    if (req.body.url) {
+        var id = shortid.generate();
         var url = req.body.url;
         getConnection(function(err, conn) {
             conn.query(`SELECT 1 FROM shortener WHERE id = '${id}';`, function(error, result) {
